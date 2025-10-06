@@ -51,7 +51,6 @@ export const App = () => {
         <tbody>
           {goods.map(good => {
             const isSelected = good === selectedGood;
-            const isAnyGoodSelected = selectedGood !== '';
 
             return (
               <tr
@@ -72,16 +71,14 @@ export const App = () => {
                       -
                     </button>
                   ) : (
-                    !isAnyGoodSelected && (
-                      <button
-                        data-cy="AddButton"
-                        type="button"
-                        className="button"
-                        onClick={() => handleAdd(good)}
-                      >
-                        +
-                      </button>
-                    )
+                    <button
+                      data-cy="AddButton"
+                      type="button"
+                      className="button"
+                      onClick={() => handleAdd(good)}
+                    >
+                      +
+                    </button>
                   )}
                 </td>
 
